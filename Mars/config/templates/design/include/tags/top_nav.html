@@ -1,3 +1,11 @@
-{% for category in list_categories %}
-{{ category.name }}
-{% endfor %}
+{% load menu_tags %}
+
+<ul>
+      <li class="active"><a href="/">Главная</a></li>
+      <li><a href="">Наши услуги</a></li>
+      <li><a href="{% url 'contact' %}">Контакты</a></li>
+        {% get_categories %}
+
+
+      <li><a href="./contact.html">Contact</a></li>
+  </ul>}

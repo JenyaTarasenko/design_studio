@@ -22,7 +22,8 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('design.urls')),
+    path('', include('design.urls')),#приложение Mars
+    path('', include('contact.urls')),#приложение Contact
 ]
 
 if settings.DEBUG:

@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'mptt',
 
     'design.apps.DesignConfig',
+    'contact.apps.ContactConfig',
+
 ]
 
 MIDDLEWARE = [

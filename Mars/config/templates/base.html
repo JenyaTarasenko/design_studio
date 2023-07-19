@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zxx">
-{% load static  menu_tags %}
+{% load static  %}
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Hazze Template">
@@ -30,7 +30,7 @@
     </div>
 
     <!-- Header Section Begin -->
-    <header class="header-section">
+<header class="header-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2">
@@ -41,40 +41,32 @@
                     </div>
                 </div>
                 <div class="col-lg-10 col-md-10">
-                     <div class="main-menu mobile-menu">
-                        <ul>
-                            <li class="active"><a href="{% url 'home' %}">Home</a></li>
-                            <li><a href="% url 'home' %}">About Us</a></li>
-                            <li><a href="{% url 'home' %}">Blog</a></li>
-                            <li><a href="./gallery.html">Gallery</a>
-                                <ul class="dropdown">
-                                    <li><a href="#">Naoh</a></li>
-                                    <li><a href="#">Padis</a></li>
-                                    <li><a href="#">Jacob</a></li>
-                                    <li><a href="#">Gomez</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./contact.html">Contact</a></li>
-                        </ul>
+                    <div class="main-menu mobile-menu">
+                        {% include 'design/include/tags/top_nav.html' %}
+
+
+
+
                     </div>
-
-
                 </div>
             </div>
             <div id="mobile-menu-wrap"></div>
         </div>
     </header>
+
+
+    </header>
     <!-- Header End -->
     {% block content %}
     <!-- Hero Section Begin -->
-    <section class="hero-section set-bg" data-setbg="media/articles/future.jpg">
+    <section class="hero-section set-bg" data-setbg="media/articles/mars.jpg">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5">
                     <div class="hs-text">
                         <span>Mars design studio</span>
-                        <h2>Разработка интернет сайтов </h2>
-                        <p>Дешевые сайты для вашего бизнесса</p>
+                        <h2>Разработка интернет сайтов для вашего бизнесса  </h2>
+                        <p>Дешевые сайты для вашего бизнесса.Готовые решения которые поиогут вашему бизнессу развится</p>
                         <a href="#" class="primary-btn">Связатся с нами</a>
                     </div>
                 </div>
@@ -89,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="as-pic">
-                        <img src="img/about-us.jpg" alt="">
+                        <img src="media/articles/about.jpg" alt="">
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -98,12 +90,10 @@
                             <span>О нас</span>
                             <h2>Студия дизайна</h2>
                         </div>
-                        <p class="f-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <p class="s-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                        <a href="#" class="primary-btn">Read More</a>
+                        <p class="f-para">Мы молодая но очень амбициозная дизайн студия</p>
+                        <p class="s-para">Наши проекты помогают вашему бизнессу развивться в сети Мы в полной мере выполняющая все этапы веб разработки,
+                            от анализа ниши Вашего бизнеса, работаем над программирования и дальнейшего продвижения готового сайта.</p>
+                        <a href="#" class="primary-btn">Заказать сайт</a>
                     </div>
                 </div>
             </div>
@@ -126,7 +116,7 @@
                 {% for m in post  %}
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
-                        <img src="" alt="">
+                        <img src="media/articles/service-2.png" alt="">
                         <h4>{{ m.category }}</h4>
                         <h5><a href="{% url 'post_detail' m.slug %}">{{ m.description|truncatewords:7}}</a></h5>
                     </div>
