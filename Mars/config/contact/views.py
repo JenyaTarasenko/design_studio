@@ -14,6 +14,6 @@ class ContactView(View):
 
 
 
-class CreateContact(CreateView):
+class CreateContact(CreateView):#после заполнеия формы переход на главную
     form_class = ContactForm
     success_url ='/'

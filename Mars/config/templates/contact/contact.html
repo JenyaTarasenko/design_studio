@@ -10,7 +10,7 @@
                         <div class="fo-logo">
 
                             <a href="#">
-                                <img src="{{ contact.icons.url }}" alt="">
+                                <img src="{{ contact.icon.url }}" alt="">
                             </a>
                         </div>
                         <ul>
@@ -20,9 +20,7 @@
                         </ul>
                         <div class="fo-social">
                             <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+
                         </div>
                         {% endfor %}
                     </div>
@@ -43,9 +41,9 @@
                         <h5>Join The Newsletter</h5>
                         <p>Get E-mail updates about our latest shop and special offers.</p>
 
-                        <form action="{% url 'contact' %}"  method="post">
+                        <form action="{% url 'feedback' %}" class="news-form" method="post">
+                            {% csrf_token %}
                             {{ form }}
-                            <input type="text" placeholder="Enter your mail">
                             <button type="submit">Subscribe</button>
                         </form>
                     </div>
